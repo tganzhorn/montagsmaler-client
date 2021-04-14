@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout } from 'antd';
+import DrawingSpace from './components/DrawingSpace';
 
-function App() {
+const { Header, Content, Footer } = Layout;
+
+function App() : React.ReactElement {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout style={{minHeight: "100vh"}}>
+      <Header style={{display: "flex", alignItems: "center"}}>
+        <img src="/logo.svg" height="48" style={{paddingRight: "24px"}} alt="Montagsmaler Logo" />
+        <div style={{color: "white", fontSize: '24px'}}>Montagsmaler</div>
+      </Header>
+      <Content style={{padding: '12px 48px'}}>
+        <div style={{padding: '12px', backgroundColor: 'white'}}>
+          <DrawingSpace />
+        </div>
+      </Content>
+      <Footer>
+        Montagsmaler ©2021 Created by Tobias Ganzhorn
+      </Footer>
+    </Layout>
+    
   );
 }
 
